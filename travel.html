@@ -12,14 +12,13 @@
             <h1>Explore Your Dream Destination</h1>
         </header>
     </div>
-    
+
     <div class="id1">
         <nav>
-            <a href="#">Home</a> |
-            <a href="#">Destinations</a> |
-            <a href="#">Packages</a> |
-            <a href="#">About</a> |
-            <a href="#">Contact Us</a>
+            <a href="#" onclick="resetPage()">Home</a> |
+            <a href="#" onclick="showDestinations()">Destinations</a> |
+            <a href="#" onclick="showContact()">Contact Us</a> |
+            <a href="travel-register.html" id="registerLink">Register</a>
         </nav>
     </div>
 
@@ -28,25 +27,132 @@
             <h2>Uncover Hidden Gems</h2>
             <p>Let us turn your travel dreams into reality! Explore breathtaking locations with our tailored experiences.</p>
         </article>
-        
+
         <article class="box">
             <h2>Exclusive Deals & Discounts</h2>
-            <p>Don't miss out! Book now to unlock special savings on top travel experiences. Offers valid for a limited time.</p>
+            <p>Don't miss out! Book now to unlock special savings on top travel experiences.</p>
         </article>
-        
+
         <article class="box">
             <h2>Why Choose Us?</h2>
-            <p>With our expert advice, best price assurance, and 24/7 support, your trip will be smooth and stress-free.</p>
+            <p>With expert advice, best price assurance, and 24/7 support, your trip will be stress-free.</p>
         </article>
     </section>
 
-    <div class="button-container">
-        <button id="readMoreBtn" onclick="redirectToRegister()">Read More</button>
+    <div id="destination-section" class="hidden">
+        <h2>Select Your Travel Preference</h2>
+        <button onclick="showInternational()">International</button>
+        <button onclick="showDomestic()">Domestic Travel</button>
+
+        <div id="internationalDestinations" class="hidden">
+            <button onclick="showPackages('USA')">USA</button>
+            <button onclick="showPackages('France')">France</button>
+            <button onclick="showPackages('Japan')">Japan</button>
+            <button onclick="showPackages('Australia')">Australia</button>
+        </div>
+
+        <div id="domesticDestinations" class="hidden">
+            <button onclick="showPackages('Goa')">Goa</button>
+            <button onclick="showPackages('Kerala')">Kerala</button>
+            <button onclick="showPackages('Manali')">Manali</button>
+            <button onclick="showPackages('Jaipur')">Jaipur</button>
+        </div>
     </div>
 
+    <div id="packages-section" class="hidden">
+        <h2>Available Packages</h2>
+        <div id="packageDetails"></div>
+    </div>
+
+    <section id="contact" class="contact-section hidden">
+        <h2>Contact Us</h2>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
     <script>
-        function redirectToRegister() {
-            window.location.href = "travel-register.html";
+        function showDestinations() {
+            document.getElementById("destination-section").classList.remove("hidden");
+        }
+
+        function showInternational() {
+            document.getElementById("internationalDestinations").classList.remove("hidden");
+            document.getElementById("domesticDestinations").classList.add("hidden");
+        }
+
+        function showDomestic() {
+            document.getElementById("domesticDestinations").classList.remove("hidden");
+            document.getElementById("internationalDestinations").classList.add("hidden");
+        }
+
+        function showPackages(country) {
+            document.getElementById("packages-section").classList.remove("hidden");
+            
+            const packages = {
+                "USA": [
+                    { name: "New York Explorer", price: "$2000" },
+                    { name: "California Beach Tour", price: "$2500" }
+                ],
+                "France": [
+                    { name: "Paris Romantic Getaway", price: "$2200" },
+                    { name: "French Riviera Tour", price: "$2700" }
+                ],
+                "Japan": [
+                    { name: "Tokyo Highlights", price: "$1800" },
+                    { name: "Kyoto Cultural Retreat", price: "$2300" }
+                ],
+                "Australia": [
+                    { name: "Sydney Adventure", price: "$2100" },
+                    { name: "Great Barrier Reef Tour", price: "$2900" }
+                ],
+                "Goa": [
+                    { name: "Goa Beach Retreat", price: "₹15,000" },
+                    { name: "Luxury Resort Stay", price: "₹25,000" }
+                ],
+                "Kerala": [
+                    { name: "Backwater Cruise", price: "₹18,000" },
+                    { name: "Hill Station Retreat", price: "₹22,000" }
+                ],
+                "Manali": [
+                    { name: "Himalayan Adventure", price: "₹20,000" },
+                    { name: "Skiing and Snowboarding", price: "₹30,000" }
+                ],
+                "Jaipur": [
+                    { name: "Royal Rajasthan Tour", price: "₹17,000" },
+                    { name: "Heritage Walk & Stay", price: "₹21,000" }
+                ]
+            };
+
+            const selectedPackages = packages[country] || [];
+            let packageDetailsHTML = `<h3>Travel Packages for ${country}:</h3>`;
+            
+            selectedPackages.forEach(pkg => {
+                packageDetailsHTML += `<p><strong>${pkg.name}</strong> - ${pkg.price}</p>`;
+            });
+
+            document.getElementById("packageDetails").innerHTML = packageDetailsHTML;
+        }
+
+        function showContact() {
+            document.getElementById("contact").classList.remove("hidden");
+            document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+        }
+
+        function resetPage() {
+            document.getElementById("destination-section").classList.add("hidden");
+            document.getElementById("packages-section").classList.add("hidden");
+            document.getElementById("contact").classList.add("hidden");
+            window.scrollTo({ top: 0, behavior: "smooth" });
         }
     </script>
 </body>

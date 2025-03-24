@@ -5,58 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple News Page</title>
     <link rel="stylesheet" href="news-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        function filterNews() {
+            var category = document.getElementById("categoryFilter").value;
+            var articles = document.getElementsByTagName("article");
+            
+            for (var i = 0; i < articles.length; i++) {
+                if (category === "all" || articles[i].classList.contains(category)) {
+                    articles[i].style.display = "block";
+                } else {
+                    articles[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
         <h1>Today's News</h1>
+        <p>Stay updated with the latest news and insights from around the world.</p>
     </header>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">World</a>
-        <a href="#">Business</a>
-        <a href="#">Sports</a>
-        <a href="#">Entertainment</a>
-        <a href="#">Technology</a>
-        <a href="#">Health</a>
-        <a href="#">Science</a>
-    </nav>
+    <section class="filter-container">
+        <label for="categoryFilter">Filter by Category:</label>
+        <select id="categoryFilter" onchange="filterNews()">
+            <option value="all">All</option>
+            <option value="breaking">Breaking News</option>
+            <option value="sports">Sports</option>
+            <option value="business">Business</option>
+            <option value="technology">Technology</option>
+            <option value="health">Health</option>
+            <option value="science">Science</option>
+        </select>
+    </section>
 
-    <section>
-        <article>
+    <section class="news-container">
+        <article class="breaking">
             <h2>Breaking News</h2>
             <p>Latest updates on current events happening around the world. Governments and organizations are making crucial decisions affecting global stability.</p>
         </article>
 
-        <article>
+        <article class="sports">
             <h2>Sports Headlines</h2>
             <p>Stay updated with the latest sports news and match highlights. The championship finals are around the corner, with top teams competing for the title.</p>
         </article>
 
-        <article>
+        <article class="business">
             <h2>Business Insights</h2>
             <p>Get the latest trends and updates from the world of business. The stock market has shown a significant rise following new economic policies.</p>
         </article>
 
-        <article>
+        <article class="technology">
             <h2>Technology Trends</h2>
             <p>Discover the newest advancements in technology. AI and robotics continue to revolutionize industries, bringing automation and efficiency.</p>
         </article>
 
-        <article>
+        <article class="health">
             <h2>Health & Wellness</h2>
             <p>Explore tips for a healthy lifestyle and medical breakthroughs. New research shows promising results in the fight against chronic diseases.</p>
         </article>
 
-        <article>
+        <article class="science">
             <h2>Scientific Discoveries</h2>
             <p>Learn about recent breakthroughs in science. Astronomers have detected a new exoplanet with Earth-like conditions, raising hopes for extraterrestrial life.</p>
         </article>
     </section>
 
-   
     <div class="read-more-container">
-        <button class="read-more" onclick="window.location.href='news-register.html'">Read More</button>
+        <button class="read-more" onclick="window.location.href='news-register.html'">Register for More News</button>
     </div>
 </body>
 </html>

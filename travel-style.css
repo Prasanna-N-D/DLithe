@@ -21,7 +21,7 @@ h1 {
     display: inline-block;
     border-radius: 10px;
     border-color: white;
-    padding: 10px 20px;
+    padding: 15px 30px;
 }
 
 a {
@@ -35,45 +35,53 @@ a:hover {
 }
 
 .id1 {
-    padding: 10px;
-    margin-bottom: 70px;
+    padding: 15px;
+    margin-bottom: 50px;
     text-align: center;
-}
-
-.box {
-    color: black;
-    height: 200px;
-    width: 200px;
-    border-style: solid;
-    border-color: white;
-    border-radius: 10px;
-    padding: 10px;
-    background: rgba(225, 225, 225, 0.9);
-    display: inline-block;
-    text-align: center;
-    margin-bottom: 20px;
 }
 
 .container {
     display: flex;
-    justify-content: space-evenly;
-    gap: 5px;
-    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
 }
 
-.button-container {
+.box {
+    color: black;
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    background: rgba(225, 225, 225, 0.9);
     text-align: center;
-    margin-top: 30px;
+    width: 30%;
+}
+
+#destination-section, #packages-section {
+    color: black;
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    background: rgba(225, 225, 225, 0.9);
+    margin: 30px auto;
+    width: 60%;
+    text-align: center;
 }
 
 button {
-    padding: 10px 20px;
+    margin-bottom: 20px;
+    padding: 12px 25px;
     font-size: 18px;
     background-color: #00796b;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
+    margin: 15px auto; 
+    text-align: left;
+    
 }
 
 button:hover {
@@ -82,24 +90,43 @@ button:hover {
 
 
 .form-container {
-    width: 100%;
-    max-width: 400px;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    margin: 100px auto;
+    width: 25%; 
+    margin: 50px auto;
+    padding: 25px;
+    background: rgba(225, 225, 225, 0.9);
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+.form-container h2 {
+    margin-bottom: 15px;
 }
 
-button {
-    width: 100%;
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 80%; 
+    max-width: 400px; 
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 80%; 
+    max-width: 400px; 
+    height: 100px; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.hidden {
+    display: none;
 }

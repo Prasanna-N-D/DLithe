@@ -1,114 +1,204 @@
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f4f8; 
+    color: #333;
+    line-height: 1.6;
 }
-
 
 header {
-    background-color: #333;
-    color: white;
+    background: linear-gradient(135deg, #2c3e50, #34495e); 
+    color: #fff;
     text-align: center;
-    padding: 15px;
+    padding: 80px 20px;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); 
 }
 
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: bold;
+}
 
-nav {
-    background-color: #444;
-    padding: 10px;
+header p {
+    margin: 10px 0 0;
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.filter-container {
     text-align: center;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-    padding: 10px 15px;
-    margin: 5px;
-    background-color: #555;
-    border-radius: 5px;
-}
-
-nav a:hover {
-    background-color: #777;
-}
-
-
-section {
+    margin: 20px 0;
     padding: 20px;
-    max-width: 800px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.filter-container label {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.filter-container select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    margin-left: 10px;
+    background: #f9f9f9;
+}
+
+.news-container {
+    max-width: 900px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 article {
-    background-color: white;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    text-align: left;
+    background: #fff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-h2 {
-    color: #333;
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
+article h2 {
+    color: #2c3e50; 
+    margin-bottom: 10px;
+}
+
+article p {
+    font-size: 1em;
+    color: #555;
+}
 
 .read-more-container {
     text-align: center;
-    margin: 20px 0;
+    margin: 40px 0;
 }
 
 .read-more {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
+    padding: 12px 24px;
+    background: #3498db; 
+    color: #fff;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 8px;
     font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .read-more:hover {
-    background-color: #0056b3;
+    background: #2980b9; 
+    transform: translateY(-2px);
 }
 
+.read-more:active {
+    transform: translateY(0);
+}
 
 .register-container {
+    background: #fff;
     max-width: 400px;
-    margin: 50px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
+.register-container h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #2c3e50; 
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column;
+}
+
 .register-container label {
-    display: block;
-    margin: 10px 0 5px;
+    margin-bottom: 8px;
+    font-size: 1em;
+    color: #555;
+    text-align: left;
 }
 
 .register-container input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.register-container input:focus {
+    border-color: #3498db; 
 }
 
 .register-container button {
-    background-color: #28a745;
-    color: white;
-    padding: 10px 15px;
+    padding: 12px;
+    background: #3498db; 
+    color: #fff;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 8px;
     font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .register-container button:hover {
-    background-color: #218838;
+    background: #2980b9; 
+    transform: translateY(-2px);
+}
+
+.register-container button:active {
+    transform: translateY(0);
+}
+
+
+@media (max-width: 768px) {
+    header {
+        padding: 40px 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .filter-container select {
+        font-size: 0.9em;
+    }
+
+    .news-container {
+        padding: 10px;
+    }
+
+    article {
+        padding: 15px;
+    }
+
+    .read-more {
+        padding: 10px 20px;
+    }
+
+    .register-container {
+        padding: 20px;
+    }
 }
